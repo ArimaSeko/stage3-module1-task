@@ -1,11 +1,11 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 wrapper {
     gradleVersion = gradlewVersion
 }
-
 subprojects {
     apply plugin: 'java'
     apply plugin: 'jacoco'
@@ -26,6 +26,8 @@ subprojects {
         useJUnitPlatform()
     }
 }
+
+
 
 task repack(type: Jar, dependsOn: ':module-main:build') {
     if (findProject(':module-main') != null) {
