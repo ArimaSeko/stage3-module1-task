@@ -27,21 +27,14 @@ public class Repository {
         return authorList;
     }
     public List readAll(){return newsModelList;}
-    public NewsModel updateNewsById(Long id){
-        NewsModel newsModelToUpdate = null;
-        try {
-            newsModelToUpdate = readBy(id);
-        }catch (ArrayIndexOutOfBoundsException e) {System.out.println(e + "\n didn't find news with that id");}
-        newsModelToUpdate.setLastUpdateDate(LocalDateTime.now());
-        return newsModelToUpdate;
+    public NewsModel updateNewsById(NewsModel newsModel){
+
+        return newsModel;
     }
     public Boolean delete(Long id){
         return Repository.getInstance().getNewsList().remove(readBy(id));}
-    public NewsModel create(String tittle){
-        NewsModel.NewsBuilder newsBuilder = new NewsModel.NewsBuilder();
-        newsBuilder.setTittle(tittle);
-        Repository.getInstance().getNewsList().add(newsBuilder.build());
-        return newsBuilder.build();
+    public NewsModel create(NewsModel newsModel){
+        return newsModel;
     }
     public NewsModel readBy(Long id){return Repository.getInstance().getNewsList().stream().
             filter(b->b.getId()==id)
