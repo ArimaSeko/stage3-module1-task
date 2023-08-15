@@ -1,15 +1,9 @@
-package com.mjc.school.repository;
-
-import com.mjc.school.repository.factories.AuthorFactory;
-import com.mjc.school.repository.factories.NewsFactory;
-import com.mjc.school.repository.model.Author;
-import com.mjc.school.repository.model.News;
+package com.mjc.school.repository.implementation;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 
 public class DataWriter {
     public static void writeData(String path, List list){

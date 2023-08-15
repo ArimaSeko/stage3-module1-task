@@ -1,7 +1,7 @@
-package com.mjc.school.repository.factories;
+package com.mjc.school.repository.implementation.factories;
 
-import com.mjc.school.repository.DataReader;
-import com.mjc.school.repository.model.News;
+import com.mjc.school.repository.implementation.DataReader;
+import com.mjc.school.repository.implementation.model.News;
 
 import java.io.IOException;
 import java.time.LocalDateTime;

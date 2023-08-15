@@ -1,7 +1,11 @@
-package com.mjc.school.repository;
+package com.mjc.school.repository.implementation;
 
-import com.mjc.school.repository.factories.*;
-import com.mjc.school.repository.model.*;
+import com.mjc.school.repository.implementation.factories.*;
+import com.mjc.school.repository.implementation.factories.AuthorFactory;
+import com.mjc.school.repository.implementation.factories.NewsFactory;
+import com.mjc.school.repository.implementation.model.Author;
+import com.mjc.school.repository.implementation.model.News;
+import com.mjc.school.repository.implementation.model.*;
 import java.util.List;
 
 public class Repository {
@@ -14,7 +18,7 @@ public class Repository {
     }
     private Repository(){
         this.newsList = NewsFactory.getInstance().database();
-        this.authorList=AuthorFactory.getInstance().database();
+        this.authorList= AuthorFactory.getInstance().database();
     }
     public List<News> getNewsList(){
         return  newsList;

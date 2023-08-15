@@ -1,11 +1,9 @@
 package com.mjc.school.service;
 
-import com.mjc.school.repository.Repository;
-import com.mjc.school.repository.model.News;
+import com.mjc.school.repository.implementation.Repository;
+import com.mjc.school.repository.implementation.model.News;
 
-import java.sql.SQLOutput;
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class Service {
     private static Service instance;

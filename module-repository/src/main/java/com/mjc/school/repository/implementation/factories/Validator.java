@@ -1,4 +1,4 @@
-package com.mjc.school.repository.factories;
+package com.mjc.school.repository.implementation.factories;
 
 public class Validator {
     public static String validate(String inLetter, String begin, String end){

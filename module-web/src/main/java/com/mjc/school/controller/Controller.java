@@ -3,11 +3,12 @@ package com.mjc.school.controller;
 import com.mjc.school.controller.Algorithms.CreateAl;
 import com.mjc.school.controller.Algorithms.DeleteAl;
 import com.mjc.school.controller.Algorithms.UpdateAl;
-import com.mjc.school.repository.*;
-import com.mjc.school.repository.model.*;
+import com.mjc.school.repository.implementation.DataWriter;
+import com.mjc.school.repository.implementation.Repository;
+import com.mjc.school.repository.implementation.model.Author;
+import com.mjc.school.repository.implementation.model.News;
+import com.mjc.school.repository.implementation.model.*;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 

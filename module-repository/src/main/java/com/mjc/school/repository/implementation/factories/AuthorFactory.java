@@ -1,6 +1,6 @@
-package com.mjc.school.repository.factories;
-import com.mjc.school.repository.DataReader;
-import com.mjc.school.repository.model.Author;
+package com.mjc.school.repository.implementation.factories;
+import com.mjc.school.repository.implementation.DataReader;
+import com.mjc.school.repository.implementation.model.Author;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,6 +1,5 @@
 package com.mjc.school.controller.Algorithms;
 
-import com.mjc.school.repository.model.News;
 import com.mjc.school.service.Service;
 
 import java.util.Scanner;

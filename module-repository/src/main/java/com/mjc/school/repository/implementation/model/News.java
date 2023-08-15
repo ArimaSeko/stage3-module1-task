@@ -1,6 +1,6 @@
-package com.mjc.school.repository.model;
+package com.mjc.school.repository.implementation.model;
 
-import com.mjc.school.repository.Repository;
+import com.mjc.school.repository.implementation.Repository;
 
 import java.time.LocalDateTime;
 
