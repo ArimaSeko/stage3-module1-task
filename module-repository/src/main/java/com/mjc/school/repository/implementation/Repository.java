@@ -26,4 +26,10 @@ public class Repository {
     public List<Author> getAuthorList(){
         return authorList;
     }
+    public void readAll(){//for autoCode, watch real method in module-web Controller class
+         }
+    public void update(){}
+    public void delete(){}
+    public void create(){}
+    public void readBy(){}
 }
