@@ -6,16 +6,15 @@ import com.mjc.school.controller.Algorithms.UpdateAl;
 import com.mjc.school.repository.implementation.DataWriter;
 import com.mjc.school.repository.implementation.Repository;
 import com.mjc.school.repository.implementation.model.Author;
-import com.mjc.school.repository.implementation.model.News;
-import com.mjc.school.repository.implementation.model.*;
+import com.mjc.school.repository.implementation.model.NewsModel;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class Controller {
     Scanner scanner = new Scanner(System.in);
-    public void writeToBase(List<News> news, List<Author> authors) {
-        DataWriter.writeData("F:\\Projects\\stage3-module1-task\\module-repository\\src\\main\\resources\\news.txt", news);
+    public void writeToBase(List<NewsModel> newsModels, List<Author> authors) {
+        DataWriter.writeData("F:\\Projects\\stage3-module1-task\\module-repository\\src\\main\\resources\\news.txt", newsModels);
         DataWriter.writeData("F:\\Projects\\stage3-module1-task\\module-repository\\src\\main\\resources\\author.txt", authors);
     }
 
@@ -32,8 +31,8 @@ public class Controller {
             String command = scanner.nextLine();
             switch (command) {
                 case "1":
-                    for (News news : Repository.getInstance().getNewsList())
-                        System.out.println(news.toString());
+                    for (NewsModel newsModel : Repository.getInstance().getNewsList())
+                        System.out.println(newsModel.toString());
                     break;
                 case "2":
                     for (Author author : Repository.getInstance().getAuthorList())

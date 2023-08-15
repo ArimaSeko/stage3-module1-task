@@ -4,7 +4,7 @@ import com.mjc.school.repository.implementation.Repository;
 
 import java.time.LocalDateTime;
 
-public class News {
+public class NewsModel {
     private long id;
     private String tittle;
     private String content;
@@ -61,10 +61,10 @@ public class News {
     }
 
 
-    public News() {
+    public NewsModel() {
     }
 
-    public News(long id, String tittle, String content, LocalDateTime createDate, LocalDateTime lastUpdateDate, long authorId) {
+    public NewsModel(long id, String tittle, String content, LocalDateTime createDate, LocalDateTime lastUpdateDate, long authorId) {
         this.id = id;
         this.tittle = tittle;
         this.content = content;
@@ -85,20 +85,26 @@ public class News {
     }
 
     public static class NewsBuilder{
-        private News news;
-        public NewsBuilder(){news = new News();}
+        private NewsModel newsModel;
+        public NewsBuilder(){
+            newsModel = new NewsModel();}
         public void setId(long id){
-            news.setId(id);
+            newsModel.setId(id);
         }
-        public void setTittle(String tittle){news.setTittle(tittle);}
-        public void setContent(String content){news.setContent(content);}
-        public void setCreateDate(LocalDateTime createDate){news.setCreateDate(createDate);}
-        public void setLastUpdateDate(LocalDateTime lastUpdateDate){news.setLastUpdateDate(lastUpdateDate);}
-        public void setAuthorId(long authorId){news.setAuthorId(authorId);}
-    public News build(){
-            if(news.getId()==0)news.setId(Repository.getInstance().getNewsList().size()+1);
-            if(news.getLastUpdateDate()==null)news.setLastUpdateDate(LocalDateTime.now());
-            if(news.getCreateDate()==null)news.setCreateDate(LocalDateTime.now());
-            return news;}
+        public void setTittle(String tittle){
+            newsModel.setTittle(tittle);}
+        public void setContent(String content){
+            newsModel.setContent(content);}
+        public void setCreateDate(LocalDateTime createDate){
+            newsModel.setCreateDate(createDate);}
+        public void setLastUpdateDate(LocalDateTime lastUpdateDate){
+            newsModel.setLastUpdateDate(lastUpdateDate);}
+        public void setAuthorId(long authorId){
+            newsModel.setAuthorId(authorId);}
+    public NewsModel build(){
+            if(newsModel.getId()==0) newsModel.setId(Repository.getInstance().getNewsList().size()+1);
+            if(newsModel.getLastUpdateDate()==null) newsModel.setLastUpdateDate(LocalDateTime.now());
+            if(newsModel.getCreateDate()==null) newsModel.setCreateDate(LocalDateTime.now());
+            return newsModel;}
     }
 }
