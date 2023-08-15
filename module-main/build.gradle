@@ -11,6 +11,7 @@ repositories {
 mainClassName = "com.mjc.school.Main"
 dependencies {
     implementation project(path: ':module-repository')
+    implementation project(path: ':module-web')
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
