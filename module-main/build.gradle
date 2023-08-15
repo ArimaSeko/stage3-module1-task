@@ -9,6 +9,11 @@ repositories {
     mavenCentral()
 }
 mainClassName = "com.mjc.school.Main"
+task buildJar(type: Jar) {
+    from sourceSets.main.output
+    archiveFileName = "news-management.jar"
+    destinationDirectory = file("F:\\Projects\\stage3-module1-task\\solution")
+}
 dependencies {
     implementation project(path: ':module-repository')
     implementation project(path: ':module-web')
