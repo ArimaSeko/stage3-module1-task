@@ -27,28 +27,23 @@ public class Repository {
         return authorList;
     }
     public List readAll(){return newsModelList;}
-    public NewsModel updateNewsById(long id, String tittle, String content, long authorId){
+    public NewsModel updateNewsById(Long id){
         NewsModel newsModelToUpdate = null;
         try {
             newsModelToUpdate = readBy(id);
         }catch (ArrayIndexOutOfBoundsException e) {System.out.println(e + "\n didn't find news with that id");}
-        if(tittle!=null) newsModelToUpdate.setTittle(tittle);
-        if(content!=null) newsModelToUpdate.setContent(content);
-        if(authorId!=0) newsModelToUpdate.setAuthorId(authorId);
         newsModelToUpdate.setLastUpdateDate(LocalDateTime.now());
         return newsModelToUpdate;
     }
-    public boolean delete(long id){
+    public Boolean delete(Long id){
         return Repository.getInstance().getNewsList().remove(readBy(id));}
-    public NewsModel create(String tittle, String content, long authorId){
+    public NewsModel create(String tittle){
         NewsModel.NewsBuilder newsBuilder = new NewsModel.NewsBuilder();
         newsBuilder.setTittle(tittle);
-        newsBuilder.setContent(content);
-        newsBuilder.setAuthorId(authorId);
         Repository.getInstance().getNewsList().add(newsBuilder.build());
         return newsBuilder.build();
     }
-    public NewsModel readBy(long id){return Repository.getInstance().getNewsList().stream().
+    public NewsModel readBy(Long id){return Repository.getInstance().getNewsList().stream().
             filter(b->b.getId()==id)
             .toList().get(0);
     }
